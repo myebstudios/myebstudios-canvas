@@ -1,25 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import MagneticBackground from '../components/ui/MagneticBackground';
 
 const Home = () => {
   return (
     <div className="ml-20 md:ml-24 min-h-screen relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" 
-           style={{ 
-             backgroundImage: 'linear-gradient(to right, #6B5191 1px, transparent 1px), linear-gradient(to bottom, #6B5191 1px, transparent 1px)',
-             backgroundSize: '40px 40px'
-           }} 
-      />
+      {/* 3D Magnetic Dot Grid Background */}
+      <MagneticBackground />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 relative">
+      <section className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 relative z-10">
         <div className="max-w-6xl">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-block px-3 py-1 bg-studio-purple text-electric-teal text-xs font-bold tracking-widest uppercase"
+            className="mb-4 inline-block px-3 py-1 bg-studio-purple text-electric-teal text-xs font-bold tracking-widest uppercase border border-electric-teal/20"
           >
             Status: Building the Future
           </motion.div>
@@ -64,7 +60,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-xl md:text-2xl text-studio-soft/60 max-w-lg font-light leading-relaxed"
+              className="text-xl md:text-2xl text-studio-soft/80 max-w-lg font-light leading-relaxed backdrop-blur-sm bg-charcoal/30 p-4 rounded-lg"
             >
               Full-stack creative execution for the next generation of <span className="text-white font-bold italic underline decoration-studio-purple">digital culture</span>. From visual identity to immersive experiences.
             </motion.p>
@@ -73,7 +69,7 @@ const Home = () => {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="w-12 h-12 rounded-full border border-electric-teal/30 flex items-center justify-center"
+                className="w-12 h-12 rounded-full border border-electric-teal/30 flex items-center justify-center bg-charcoal/50 backdrop-blur-md"
               >
                 <ArrowDown size={24} className="text-electric-teal" />
               </motion.div>
@@ -84,7 +80,7 @@ const Home = () => {
       </section>
 
       {/* Marquee Ticker */}
-      <div className="w-full bg-solar-yellow py-6 overflow-hidden border-y-4 border-charcoal">
+      <div className="w-full bg-solar-yellow py-6 overflow-hidden border-y-4 border-charcoal relative z-20">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
