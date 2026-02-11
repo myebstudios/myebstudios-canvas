@@ -6,8 +6,8 @@ const DotGrid = () => {
   const meshRef = useRef();
   const { mouse, viewport } = useThree();
   
-  const count = 40;
-  const separation = 0.5;
+  const count = 50;
+  const separation = 0.4;
   
   const [positions, initialPositions] = useMemo(() => {
     const pos = new Float32Array(count * count * 3);
@@ -38,13 +38,18 @@ const DotGrid = () => {
       const ix = initialPositions[idx];
       const iy = initialPositions[idx + 1];
 
-      const dist = Math.sqrt((mx - ix) ** 2 + (my - iy) ** 2);
-      const force = Math.max(0, (2 - dist) / 2);
+      const dx = mx - ix;
+      const dy = my - iy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
       
-      // Magnetic warp effect
-      pos[idx] = ix + (ix - mx) * force * 0.5;
-      pos[idx + 1] = iy + (iy - my) * force * 0.5;
-      pos[idx + 2] = Math.sin(time + ix + iy) * 0.1 + force * 0.5;
+      // Increased radius and stronger force
+      const radius = 4;
+      const force = Math.max(0, (radius - dist) / radius);
+      
+      // Magnetic warp effect: pull dots toward mouse
+      pos[idx] = ix + dx * force * 0.4;
+      pos[idx + 1] = iy + dy * force * 0.4;
+      pos[idx + 2] = Math.sin(time + ix + iy) * 0.1 + force * 1.5;
     }
     
     meshRef.current.geometry.attributes.position.needsUpdate = true;
@@ -61,10 +66,10 @@ const DotGrid = () => {
         />
       </bufferGeometry>
       <pointsMaterial 
-        size={0.05} 
+        size={0.06} 
         color="#00C9A8" 
         transparent 
-        opacity={0.6} 
+        opacity={0.8} 
         sizeAttenuation 
       />
     </points>
@@ -73,8 +78,14 @@ const DotGrid = () => {
 
 const MagneticBackground = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0">
-      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+    <div className="fixed inset-0 pointer-events-none z-0">
+      <Canvas 
+        camera={{ position: [0, 0, 10], fov: 50 }}
+        // CRITICAL: Listen to events on the whole document so interaction 
+        // works even when the canvas is behind other elements.
+        eventSource={document.getElementById('root')}
+        eventPrefix="client"
+      >
         <color attach="background" args={['#282828']} />
         <DotGrid />
       </Canvas>
