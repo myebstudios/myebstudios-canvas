@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c7a6",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2320",
+                        "studio-purple": "#39235E",
+                        "solar-yellow": "#E5C349",
+                        "charcoal-grid": "#121212"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>myebstudios-canvas | Neo-Pop Creative Studio</title>
+<style>
+        .neo-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        .text-glow-teal {
+            text-shadow: 0 0 15px rgba(0, 199, 166, 0.6);
+        }
+        .text-glow-yellow {
+            text-shadow: 0 0 20px rgba(229, 195, 73, 0.4);
+        }
+        .neo-border {
+            border: 2px solid #39235E;
+            box-shadow: 4px 4px 0px #39235E;
+        }
+        .neo-border-teal {
+            border: 2px solid #00c7a6;
+            box-shadow: 4px 4px 0px #00c7a6;
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Persistent Vertical Toolbar -->
+<aside class="fixed left-0 top-0 h-full w-20 md:w-24 bg-charcoal-grid border-r border-studio-purple flex flex-col items-center py-8 z-50">
+<div class="mb-12">
+<div class="w-12 h-12 bg-primary rounded flex items-center justify-center text-background-dark font-bold text-xl neo-border-teal">
+                MC
+            </div>
+</div>
+<nav class="flex-1 flex flex-col gap-8 items-center">
+<a class="group flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-icons text-2xl group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Work</span>
+</a>
+<a class="group flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-icons text-2xl group-hover:scale-110 transition-transform">science</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Lab</span>
+</a>
+<a class="group flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-icons text-2xl group-hover:scale-110 transition-transform">shopping_bag</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">Shop</span>
+</a>
+<a class="group flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-icons text-2xl group-hover:scale-110 transition-transform">info</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold">About</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="bg-primary text-background-dark p-3 rounded-lg shadow-[0_0_20px_rgba(0,199,166,0.4)] hover:shadow-[0_0_30px_rgba(0,199,166,0.6)] transition-all flex flex-col items-center gap-1 group">
+<span class="material-icons group-rotate-12 transition-transform">bolt</span>
+<span class="text-[10px] uppercase font-black">Hire</span>
+</button>
+</div>
+</aside>
+<main class="ml-20 md:ml-24 neo-grid min-h-screen relative">
+<!-- Floating Geometric Elements -->
+<div class="absolute top-20 right-[10%] w-32 h-32 border-4 border-studio-purple opacity-20 rotate-12 hidden lg:block"></div>
+<div class="absolute bottom-40 right-[5%] w-16 h-16 bg-solar-yellow opacity-10 rounded-full hidden lg:block"></div>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 relative">
+<div class="max-w-6xl">
+<div class="mb-4 inline-block px-3 py-1 bg-studio-purple text-primary text-xs font-bold tracking-widest uppercase">
+                    Status: Building the Future
+                </div>
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-black leading-tight mb-8">
+<span class="text-white block">WE DON'T JUST</span>
+<span class="text-solar-yellow text-glow-yellow block">DESIGN.</span>
+<span class="text-white block">WE BUILD THE</span>
+<span class="text-primary text-glow-teal block">LIFESTYLE.</span>
+</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+<p class="text-xl md:text-2xl text-slate-400 max-w-lg font-light leading-relaxed">
+                        Full-stack creative execution for the next generation of <span class="text-white font-bold italic underline decoration-studio-purple">digital culture</span>. From visual identity to immersive experiences.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center animate-bounce">
+<span class="material-icons text-primary">arrow_downward</span>
+</div>
+<span class="text-xs uppercase font-black tracking-widest text-slate-500">Explore our canvas</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Ticker / Marquee -->
+<div class="w-full bg-solar-yellow py-4 overflow-hidden border-y-4 border-charcoal-grid">
+<div class="flex whitespace-nowrap animate-pulse">
+<div class="flex gap-12 text-background-dark font-black text-2xl uppercase italic">
+<span>* Bold Vision *</span>
+<span>* Digital Craft *</span>
+<span>* Neo-Pop Aesthetics *</span>
+<span>* High Energy Design *</span>
+<span>* Bold Vision *</span>
+<span>* Digital Craft *</span>
+<span>* Neo-Pop Aesthetics *</span>
+<span>* High Energy Design *</span>
+<span>* Bold Vision *</span>
+</div>
+</div>
+</div>
+<!-- Featured Lab Section -->
+<section class="px-8 md:px-16 lg:px-24 py-32">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="text-4xl md:text-6xl font-black uppercase mb-4 text-white">The Lab <span class="text-studio-purple">/</span> 01</h2>
+<p class="text-slate-400 font-medium">Recent high-impact experiments and creative collisions.</p>
+</div>
+<a class="px-8 py-4 bg-transparent border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-background-dark transition-all neo-border-teal" href="#">
+                    View All Experiments
+                </a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Project Card 1 -->
+<div class="group relative bg-charcoal-grid neo-border p-1 overflow-hidden">
+<div class="relative h-[400px] overflow-hidden">
+<img alt="Digital Art Piece" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" data-alt="Futuristic neon synthwave computer setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpi3ZUTYH8caTQC0tgpcxuLuPaZp9-GGVUq9QuPMY6wgOCrdSWxt92NaDZKWPTvwCb8sio3EVy4afaFuWltTDnacbc-u2HOAZgwI2GZFkPgs857SKePfwUdayue1ZwCPMKLZo7ytnq9huJ_ZVD34pG4wKjwIVsYGz6ihlXc53GOI4HwWXls--Rg_B6iNNyPE6-I5mCNrGV5Jgp_kNAhdnNNSG_GHVUY8NZc1uo76O60J_D7TPlEZiKLd17j-NqEmfHjeSfHmDrqWU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-80"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-xs font-black text-primary uppercase bg-background-dark px-2 py-1 mb-2 inline-block">Visual Identity</span>
+<h3 class="text-3xl font-black text-white uppercase group-hover:text-solar-yellow transition-colors">Cybernetic Echoes</h3>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative bg-charcoal-grid neo-border p-1 overflow-hidden">
+<div class="relative h-[400px] overflow-hidden">
+<img alt="Neo-pop illustration" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" data-alt="Vibrant abstract neo-pop color splash" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBr_pV9ksJGyBamD6YG9C9qCk6_fS0rUf8KiL_6Cg1yOCMzSVDBxpTactkiQpTGKslaJslQxKyM1uGR-O96PCXLwZoo-pHBGUCT3-nbYFrdGMNyAAdogNNCzWYRmeixW4-EtsNlNCMN_JVYhRcPwv6b9_ivwrC1FTjBTnNU-MMuKs10zkEIKWqXLGGuEhRdQrIxsg4b2S2F5RN_5oguFACoECbP_ssSBOuqMCVM5OGrHX5rsdjIO-Nuhpwp9SgQsxUGCLyc7bokiM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-80"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-xs font-black text-primary uppercase bg-background-dark px-2 py-1 mb-2 inline-block">Web Experience</span>
+<h3 class="text-3xl font-black text-white uppercase group-hover:text-solar-yellow transition-colors">Liquid Motion UI</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="px-8 md:px-16 lg:px-24 py-32 bg-studio-purple/20 border-y border-studio-purple relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary opacity-5 blur-[120px] rounded-full"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="text-5xl md:text-7xl font-black text-white uppercase mb-8 leading-tight">
+                    Ready to <span class="text-primary italic">disrupt</span> the noise?
+                </h2>
+<p class="text-xl text-slate-300 mb-12">
+                    Our canvas is open. Let's build something that makes people stop scrolling and start feeling.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="px-10 py-5 bg-primary text-background-dark font-black uppercase text-lg neo-border-teal hover:translate-x-1 hover:-translate-y-1 transition-transform">
+                        Start a Project
+                    </button>
+<button class="px-10 py-5 bg-transparent border-2 border-white text-white font-black uppercase text-lg hover:bg-white hover:text-background-dark transition-all">
+                        The Process
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="px-8 md:px-16 lg:px-24 py-20 border-t border-studio-purple">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="text-4xl font-black text-white mb-6">MYEBSTUDIOS<span class="text-primary">_</span>CANVAS</div>
+<p class="text-slate-400 max-w-sm mb-8">
+                        The intersection of high-energy pop art and precision engineering. Defining the lifestyle of the next-gen web.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded border border-studio-purple flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-icons text-xl">camera_alt</span>
+</a>
+<a class="w-10 h-10 rounded border border-studio-purple flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-icons text-xl">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded border border-studio-purple flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-icons text-xl">public</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-solar-yellow font-black uppercase mb-6 tracking-widest text-sm">Navigation</h4>
+<ul class="flex flex-col gap-4 text-slate-400 font-bold uppercase text-xs">
+<li><a class="hover:text-white transition-colors" href="#">Portfolio</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Laboratory</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Merch Shop</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-black uppercase mb-6 tracking-widest text-sm">Location</h4>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Remote First.<br/>
+                        HQ: Studio A, Cyber-Space<br/>
+                        Est. 2024
+                    </p>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase font-bold text-slate-600 tracking-[0.2em]">
+<div>© 2024 MYEBSTUDIOS-CANVAS. ALL RIGHTS RESERVED.</div>
+<div>BUILT WITH HIGH ENERGY &amp; VIBRANT SOUL.</div>
+</div>
+</footer>
+</main>
+</body></html>

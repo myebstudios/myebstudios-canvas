@@ -1,45 +1,51 @@
 import React from 'react';
-import { Layout, FlaskConical, ShoppingBag, User, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Briefcase, FlaskConical, ShoppingBag, Info, Zap } from 'lucide-react';
 
 const Toolbar = () => {
   const navItems = [
     { name: 'Work', icon: Briefcase, path: '/' },
     { name: 'Lab', icon: FlaskConical, path: '/lab' },
     { name: 'Shop', icon: ShoppingBag, path: '/shop' },
-    { name: 'About', icon: User, path: '/about' },
+    { name: 'About', icon: Info, path: '/about' },
   ];
 
   return (
-    <motion.div 
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-      className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-6 p-4 bg-studio-purple/80 backdrop-blur-md rounded-2xl border border-studio-medium shadow-2xl z-50"
-    >
-      <div className="w-10 h-10 bg-electric-teal rounded-lg flex items-center justify-center mb-4 cursor-pointer hover:scale-110 transition-transform">
-        <span className="text-studio-purple font-bold text-xl">eb</span>
-      </div>
-      
-      {navItems.map((item) => (
-        <button
-          key={item.name}
-          className="group relative p-3 text-studio-soft hover:text-electric-teal transition-colors"
-          title={item.name}
+    <aside className="fixed left-0 top-0 h-full w-20 md:w-24 bg-charcoal border-r border-studio-purple flex flex-col items-center py-8 z-50">
+      <div className="mb-12">
+        <motion.div 
+          whileHover={{ scale: 1.1 }}
+          className="w-12 h-12 bg-electric-teal rounded flex items-center justify-center text-charcoal font-bold text-xl border-2 border-electric-teal shadow-[4px_4px_0px_#00C9A8]"
         >
-          <item.icon size={24} />
-          <span className="absolute left-16 bg-studio-purple px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-studio-medium">
-            {item.name}
-          </span>
-        </button>
-      ))}
-
-      <div className="mt-4 pt-4 border-t border-studio-medium">
-        <button className="p-3 bg-electric-teal text-studio-purple rounded-full shadow-[0_0_15px_rgba(0,245,212,0.5)] hover:scale-110 transition-transform" title="Hire Me">
-          <span className="sr-only">Hire Me</span>
-          <Layout size={24} />
-        </button>
+          eb
+        </motion.div>
       </div>
-    </motion.div>
+
+      <nav className="flex-1 flex flex-col gap-8 items-center">
+        {navItems.map((item) => (
+          <motion.a
+            key={item.name}
+            href={item.path}
+            whileHover={{ scale: 1.1 }}
+            className="group flex flex-col items-center gap-1 text-studio-medium hover:text-electric-teal transition-colors"
+          >
+            <item.icon size={24} className="group-hover:text-electric-teal" />
+            <span className="text-[10px] uppercase tracking-tighter font-bold">{item.name}</span>
+          </motion.a>
+        ))}
+      </nav>
+
+      <div className="mt-auto">
+        <motion.button 
+          whileHover={{ scale: 1.05, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-electric-teal text-charcoal p-3 rounded-lg shadow-[0_0_20px_rgba(0,201,168,0.4)] hover:shadow-[0_0_30px_rgba(0,201,168,0.6)] transition-all flex flex-col items-center gap-1 group"
+        >
+          <Zap size={20} className="group-hover:animate-pulse" />
+          <span className="text-[10px] uppercase font-black">Hire</span>
+        </motion.button>
+      </div>
+    </aside>
   );
 };
 
