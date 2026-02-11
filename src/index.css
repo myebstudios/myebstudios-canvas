@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-studio-purple: #39235E;
+  --color-studio-medium: #6B5191;
+  --color-studio-soft: #FBEAFF;
+  --color-electric-teal: #00C9A8;
+  --color-solar-yellow: #E5C349;
+  --color-charcoal: #282828;
+}
 
 body {
   @apply bg-charcoal text-white;
