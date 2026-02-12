@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
+import { Float, MeshDistortMaterial, Sphere, MeshWobbleMaterial } from '@react-three/drei';
 
 const FloatingObject = () => {
   const meshRef = useRef();
@@ -14,13 +14,15 @@ const FloatingObject = () => {
   });
 
   return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={meshRef} args={[1, 64, 64]} scale={1.5}>
+    <Float speed={3} rotationIntensity={2} floatIntensity={4}>
+      <Sphere ref={meshRef} args={[1, 64, 64]} scale={1.8}>
         <MeshDistortMaterial
           color="#00C9A8"
-          speed={3}
-          distort={0.4}
+          speed={4}
+          distort={0.5}
           radius={1}
+          emissive="#00C9A8"
+          emissiveIntensity={0.2}
         />
       </Sphere>
     </Float>
