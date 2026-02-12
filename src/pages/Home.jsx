@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { Canvas } from '@react-three/fiber';
 import MagneticBackground from '../components/ui/MagneticBackground';
-import FloatingObject from '../components/ui/FloatingObject';
+import SplineHero from '../components/ui/SplineHero';
 import ProjectCard from '../components/ui/ProjectCard';
 import ShopRibbon from '../components/ui/ShopRibbon';
 
 const Home = () => {
   const featuredProjects = [
     {
+      id: "cybernetic-echoes",
       title: "Cybernetic Echoes",
       category: "Visual Identity",
       tech: "Affinity + Midjourney",
@@ -17,6 +17,7 @@ const Home = () => {
       image: "https://images.unsplash.com/photo-1614850523296-e8c041df43a6?q=80&w=800&auto=format&fit=crop"
     },
     {
+      id: "liquid-motion-ui",
       title: "Liquid Motion UI",
       category: "Web Experience",
       tech: "React + R3F + Framer",
@@ -24,6 +25,7 @@ const Home = () => {
       image: "https://images.unsplash.com/photo-1633167606207-d840b5070fc2?q=80&w=800&auto=format&fit=crop"
     },
     {
+      id: "solar-branding",
       title: "Solar Branding",
       category: "Creative Strategy",
       tech: "AI-Augmented Logic",
@@ -31,6 +33,7 @@ const Home = () => {
       image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop"
     },
     {
+      id: "studio-log",
       title: "The Studio Log",
       category: "Content Pillar",
       tech: "Markdown + Vite",
@@ -106,7 +109,7 @@ const Home = () => {
                 whileHover={{ scale: 1.1 }}
                 className="flex items-center gap-4 group"
               >
-                <div className="w-16 h-16 rounded-full border-2 border-electric-teal flex items-center justify-center bg-charcoal/50 backdrop-blur-md group-hover:bg-electric-teal transition-all">
+                <div className="w-16 h-16 rounded-full border-2 border-electric-teal flex items-center justify-center bg-charcoal/50 backdrop-blur-md group-hover:bg-electric-teal transition-all shadow-[0_0_20px_rgba(0,201,168,0.3)]">
                   <ArrowDown size={32} className="text-electric-teal group-hover:text-charcoal transition-colors" />
                 </div>
                 <span className="text-xs uppercase font-black tracking-widest text-studio-medium group-hover:text-electric-teal transition-colors">Explore</span>
@@ -114,14 +117,9 @@ const Home = () => {
             </div>
           </div>
 
-          {/* 3D Object Space */}
-          <div className="hidden lg:block h-[600px] relative">
-             <div className="dev-comment">// canvas: Hero3D; object: DistortedSphere;</div>
-             <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={0.5} />
-                <pointLight position={[10, 10, 10]} />
-                <FloatingObject />
-             </Canvas>
+          {/* Spline 3D Object Space */}
+          <div className="hidden lg:block h-[700px] relative">
+             <SplineHero />
           </div>
         </div>
       </section>
