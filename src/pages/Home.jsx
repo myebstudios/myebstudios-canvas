@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import MagneticBackground from '../components/ui/MagneticBackground';
 import ProjectCard from '../components/ui/ProjectCard';
+import ShopRibbon from '../components/ui/ShopRibbon';
 
 const Home = () => {
   const featuredProjects = [
@@ -38,11 +39,13 @@ const Home = () => {
 
   return (
     <div className="ml-20 md:ml-24 min-h-screen relative overflow-hidden bg-charcoal">
+      <div className="dev-comment">// view: HomeView; context: LandingHero; auth: guest;</div>
       <MagneticBackground />
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 relative z-10">
         <div className="max-w-6xl">
+          <div className="dev-comment">// module: HeroSection; animation: staggerChildren;</div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -128,10 +131,13 @@ const Home = () => {
         </motion.div>
       </div>
 
+      <ShopRibbon />
+
       {/* Featured Work Grid */}
       <section className="px-8 md:px-16 lg:px-24 py-32 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div>
+            <div className="dev-comment">// module: ProjectGrid; count: {featuredProjects.length};</div>
             <h2 className="text-4xl md:text-6xl font-black uppercase mb-4 text-white">The Lab <span className="text-studio-purple">/</span> 01</h2>
             <p className="text-studio-medium font-medium">Recent high-impact experiments and creative collisions.</p>
           </div>

@@ -10,5 +10,24 @@
 }
 
 body {
-  @apply bg-charcoal text-white;
+  @apply bg-charcoal text-white transition-colors duration-500;
+}
+
+.creative-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.creative-mode body {
+  @apply bg-white text-charcoal;
+}
+
+/* Hide dev comments by default */
+.dev-comment {
+  display: none;
+}
+
+/* Show dev comments in creative mode */
+.creative-mode .dev-comment {
+  display: block;
+  @apply text-[10px] font-mono text-studio-purple bg-solar-yellow/20 p-1 mb-2 border-l-2 border-solar-yellow italic;
 }
